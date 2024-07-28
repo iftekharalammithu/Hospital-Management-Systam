@@ -15,13 +15,9 @@ const Hero = () => {
         </p>
       </div>
       <div className="banner">
-        <img
-          src="public\hero.png"
-          className="animated-image"
-          alt="hero image"
-        />
+        <img src="hero.png" className="animated-image" alt="hero image" />
         <span>
-          <img src="public\Vector.png" alt="vactor" />
+          <img src="Vector.png" alt="vactor" />
         </span>
       </div>
     </div>

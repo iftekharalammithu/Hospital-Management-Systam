@@ -4,7 +4,7 @@ const Biography = () => {
   return (
     <div className="biography container">
       <div className="banner">
-        <img src="public\about.png" alt="about" />
+        <img src="about.png" alt="about" />
       </div>
       <div className="banner">
         <p>Biography</p>

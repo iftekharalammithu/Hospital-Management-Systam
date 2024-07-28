@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Message_Form = () => {
   const [firstName, setfirstName] = useState("");
-  const [lastName, setlastName] = useState();
-  const [email, setemail] = useState();
-  const [phone, setphone] = useState();
-  const [message, setmessage] = useState();
-  console.log(firstName);
+  const [lastName, setlastName] = useState("");
+  const [email, setemail] = useState("");
+  const [phone, setphone] = useState("");
+  const [message, setmessage] = useState("");
 
   const handle_submit = async (e) => {
     e.preventDefault();
@@ -29,8 +29,15 @@ const Message_Form = () => {
         }
       );
       console.log(response);
+      toast.success(response.data.message);
+      setfirstName("");
+      setlastName("");
+      setemail("");
+      setphone("");
+      setmessage("");
     } catch (error) {
-      console.log(error);
+      toast.error(error.response.data.reason);
+      console.log(error.response.data.reason);
     }
   };
   return (
@@ -69,10 +76,12 @@ const Message_Form = () => {
           rows={7}
           placeholder="Message"
           value={message}
-          onChange={(e) => e.target.value}
+          onChange={(e) => setmessage(e.target.value)}
         ></textarea>
         <div style={{ justifyContent: "center", alignItems: "center" }}>
-          <button type="submit">Send</button>
+          <button className="btn" type="submit">
+            Send
+          </button>
         </div>
       </form>
     </div>

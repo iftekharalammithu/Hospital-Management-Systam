@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 
 // make createcontext for authentication and set user data
-const AuthContext = createContext({ IsAuth: false });
+export const AuthContext = createContext({ IsAuth: false });
 
 const Appwrapper = () => {
   const [IsAuth, setAuth] = useState(false);

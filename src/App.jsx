@@ -8,11 +8,13 @@ import Appointment from "./Pages/Appointment/Appointment";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./Components/Home/Navbar";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
+        <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/about" element={<About></About>}></Route>
