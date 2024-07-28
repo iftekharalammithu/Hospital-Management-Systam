@@ -9,8 +9,36 @@ import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Home/Navbar";
+import { useContext, useEffect } from "react";
+import { AuthContext } from "./main";
+import axios from "axios";
 
 const App = () => {
+  const { IsAuth, setAuth, setuser } = useContext(AuthContext);
+
+  useEffect(() => {
+    const getuser = async () => {
+      try {
+        const res = await axios.get(
+          "http://localhost:4000/api/v1/user/patient/me",
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(res);
+        if (res.data.success) {
+          setuser(res.data);
+          setAuth(true);
+        }
+      } catch (error) {
+        setAuth(false);
+        setuser("");
+        console.log(error);
+      }
+    };
+    getuser();
+  }, [IsAuth]);
+
   return (
     <>
       <BrowserRouter>
