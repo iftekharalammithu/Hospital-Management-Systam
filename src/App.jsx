@@ -12,6 +12,7 @@ import Navbar from "./Components/Home/Navbar";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "./main";
 import axios from "axios";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   const { IsAuth, setAuth, setuser } = useContext(AuthContext);
@@ -52,6 +53,7 @@ const App = () => {
             element={<Appointment></Appointment>}
           ></Route>
         </Routes>
+        <Footer></Footer>
         <ToastContainer position="top-center" />
       </BrowserRouter>
     </>

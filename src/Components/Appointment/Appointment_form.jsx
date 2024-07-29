@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Appointment_form = () => {
@@ -32,7 +31,6 @@ const Appointment_form = () => {
   const handleAppoint = (e) => {
     e.preventDefault();
     const has_visitedbool = Boolean(has_visited);
-    console.log(has_visitedbool);
     //   make a useEffect and fatch the api with axios http://localhost:4000/api/v1/appintment/apply_appointment and  send the all the data
     const data = {
       firstName,
@@ -54,8 +52,7 @@ const Appointment_form = () => {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res.data);
-        toast.success("Appointment Booked Successfully");
+        toast.success(res.data.message);
       })
       .catch((err) => {
         console.log(err);
