@@ -1,8 +1,12 @@
+import Biography from "../../Components/Home/Biography";
+import Hero from "../../Components/Home/Hero";
+
 const About = () => {
   return (
-    <div>
-      <h1>About</h1>
-    </div>
+    <>
+      <Hero title="Learn More About Us" image="public\about.png"></Hero>
+      <Biography></Biography>
+    </>
   );
 };
 

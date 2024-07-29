@@ -13,6 +13,9 @@ const Login = () => {
 
   const navagate = useNavigate();
 
+  if (IsAuth) {
+    navagate("/");
+  }
   // make a function for handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,9 +28,7 @@ const Login = () => {
       toast.error("Password and Confirm Password does not match");
       return;
     }
-    if (IsAuth) {
-      navagate("/");
-    }
+
     try {
       const response = await axios.post(
         "http://localhost:4000/api/v1/user/login",
@@ -46,7 +47,7 @@ const Login = () => {
       console.log(response);
       if (response.status === 200) {
         setAuth(true);
-        localStorage.setItem("token", response.data.data.token);
+        localStorage.setItem("patientToken", response.data.data.token);
         toast.success("Login Successfully");
         console.log(IsAuth);
         return <Navigate to={"/"} />;
@@ -90,8 +91,8 @@ const Login = () => {
             flexDirection: "row",
           }}
         >
-          <p>Not Regester?</p>
-          <Link to={"/regester"}>Regester Now</Link>
+          <p>Not Register?</p>
+          <Link to={"/register"}>Register Now</Link>
         </div>
 
         <div style={{ justifyContent: "center", alignItems: "center" }}>

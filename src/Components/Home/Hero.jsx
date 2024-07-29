@@ -1,10 +1,10 @@
 import React from "react";
 
-const Hero = () => {
+const Hero = ({ title, image }) => {
   return (
     <div className="hero container">
       <div className="banner">
-        <h1>Welcome to our Health Care Hospital</h1>
+        <h1>{title ? title : "Welcome to our Health Care Hospital"}</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
           quisquam optio necessitatibus vero quasi excepturi ex ipsum nihil
@@ -15,7 +15,11 @@ const Hero = () => {
         </p>
       </div>
       <div className="banner">
-        <img src="hero.png" className="animated-image" alt="hero image" />
+        <img
+          src={image ? image : "hero.png"}
+          className="animated-image"
+          alt="hero image"
+        />
         <span>
           <img src="Vector.png" alt="vactor" />
         </span>

@@ -73,7 +73,7 @@ const Message_Form = () => {
           />
         </div>
         <textarea
-          rows={7}
+          rows="7"
           placeholder="Message"
           value={message}
           onChange={(e) => setmessage(e.target.value)}

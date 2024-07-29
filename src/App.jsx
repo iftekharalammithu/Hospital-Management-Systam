@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import Login from "./Pages/Login/Login";
-import Regester from "./Pages/Regester/Regester";
+import Register from "./Pages/Regester/Register";
 import Appointment from "./Pages/Appointment/Appointment";
 import { ToastContainer } from "react-toastify";
 
@@ -25,7 +25,6 @@ const App = () => {
             withCredentials: true,
           }
         );
-        console.log(res);
         if (res.data.success) {
           setuser(res.data);
           setAuth(true);
@@ -47,7 +46,7 @@ const App = () => {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/regester" element={<Regester></Regester>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
           <Route
             path="/appointment"
             element={<Appointment></Appointment>}

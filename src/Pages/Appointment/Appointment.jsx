@@ -1,7 +1,9 @@
+import Appoint_compo from "../../Components/Appointment/Appoint_compo";
+
 const Appointment = () => {
   return (
     <div>
-      <h1>Appointment</h1>
+      <Appoint_compo></Appoint_compo>
     </div>
   );
 };
