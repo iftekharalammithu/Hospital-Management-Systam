@@ -43,7 +43,7 @@ const Footer = () => {
         <br />
         <div className="content">
           <div>
-            <img src="public\logo.png" alt="logo" className="logo-img" />
+            <img src="\logo.png" alt="logo" className="logo-img" />
           </div>
           <div>
             <h4>Quick Link</h4>
